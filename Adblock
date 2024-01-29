@@ -1,0 +1,34 @@
+Adblock
+
+youtube.com###.ad-showing-card                { display: none !important; }
+youtube.com###.ytp-ad-module                  { display: none !important; }
+youtube.com###.ytp-ad-placeholder              { display: none !important; }
+youtube.com###.ytd-banner-promo-renderer      { display: none !important; }
+youtube.com###.ytd-companion-slot-renderer    { display: none !important; }
+youtube.com###.ytd-display-ad-renderer        { display: none !important; }
+youtube.com###.ytd-promoted-sparkles-text-overlay-renderer  { display: none !important; }
+youtube.com###.ytd-promoted-sparkles-renderer  { display: none !important; }
+youtube.com###.ytd-sponsored-card-renderer     { display: none !important; }
+
+youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, null)
+
+youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
+youtube.com##+js(set, Object.prototype.adBlocksFound, 0)
+youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
+
+youtube.com##+js(acgi, ytd-companion-slot-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(acgi, ytd-player-policy-override-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(acgi, ytd-promoted-sparkles-overlay-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(acgi, ytd-reel-shelf-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(acgi, ytd-shelf-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(acgi, ytd-skip-ad-button-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(acgi, ytd-watch-next-secondary-results-renderer, function() { this.style.display = 'none'; })\
+youtube.com##+js(set, window.YTConfig.player_params.ad_placements, null)
+
+facebook.com###fb_xdm_frame_https { display: none !important; }
+facebook.com##div[class="clearfix fbstory_composer fbStoryComposer fb_hide_if_no_commerce"] { display: none !important; }
+facebook.com##div[class="clearfix fb_hide_if_no_commerce fbStoryComposer fb_hide_if_no_canvas_permalink"] { display: none !important; }
+
+twitter.com##.PromotedContent { display: none !important; }
+twitter.com##.AdCard { display: none !important; }
+twitter.com##.PromotedTweet { display: none !important; }
